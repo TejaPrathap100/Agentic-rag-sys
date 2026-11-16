@@ -1,0 +1,27 @@
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.env
+.env.*
+
+# ChromaDB and generated data
+backend/chroma_db/
+backend/data/raw_pdfs/
+backend/data/processed/
+backend/data/evaluation/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,271 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #080f1e;
+  color: #e5eaf5;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  outline: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080f1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #263b59;
+  border-radius: 10px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Chat page */
+.chat-panel {
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 15px 5px;
+}
+
+.chat-welcome {
+  text-align: center;
+  margin: auto;
+  max-width: 400px;
+}
+
+.chat-welcome h2 {
+  font-size: 20px;
+  margin: 15px 0 10px;
+}
+
+.chat-welcome p {
+  color: #8c9bb1;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.message {
+  max-width: 85%;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: #1c3c70;
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background: #17263d;
+  border: 1px solid #2a3d59;
+}
+
+.message strong {
+  display: block;
+  color: #8dbbff;
+  margin-bottom: 7px;
+}
+
+.message p {
+  color: #e5eaf5;
+}
+
+.message-sources {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #34445c;
+  color: #9dbef0;
+  font-size: 10px;
+}
+
+.chat-input-preview button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clear-chat-button {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #34445c;
+  color: #aabbd2;
+  padding: 9px 13px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Document upload */
+.upload-label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upload-feedback {
+  margin-top: 15px;
+  max-width: 450px;
+  color: #8dbbff;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.upload-area {
+  text-align: center;
+  padding: 35px 15px;
+}
+
+.upload-area h2 {
+  margin: 15px 0 8px;
+}
+
+.upload-area p {
+  color: #8c9bb1;
+  font-size: 12px;
+}
+
+/* Evaluation page */
+.evaluation-placeholder {
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.evaluation-placeholder p {
+  color: #8c9bb1;
+  max-width: 500px;
+  margin: 12px auto;
+  line-height: 1.7;
+}
+
+/* General controls */
+.quick-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: left;
+  padding: 15px 5px;
+  color: inherit;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #293a53;
+  cursor: pointer;
+}
+
+.quick-action span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quick-action small {
+  color: #8c9bb1;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+.mobile-close,
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    z-index: 100;
+    left: -280px;
+    top: 0;
+    height: 100vh;
+    transition: left 0.25s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 90;
+  }
+
+  .mobile-close,
+  .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .message {
+    max-width: 95%;
+  }
+}

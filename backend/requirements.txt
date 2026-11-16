@@ -1,0 +1,14 @@
+
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic-settings
+pymupdf
+chromadb
+fastembed
+rank-bm25
+langgraph
+langchain-core
+httpx
+pandas
+numpy
